@@ -4,6 +4,8 @@ Audit a JSON token policy the way a security reviewer would. The checker grades 
 
 As of 2026-10-13, no direct equivalent found as of 2026-10-13: auth frameworks embed their own defaults, but searches across GitHub (194 queries) and the web found no standalone policy-declaration hygiene checker with TTL ceilings and exit-code gating.
 
+<p align="center"><img src="docs/demo.gif" alt="demo" width="720"></p>
+
 ## Problem
 
 Token lifetimes creep. Someone sets the access TTL to a week "temporarily", a refresh token outlives its paired access token, an `api_key` gets no rotation plan, a wildcard `*` scope sneaks into a service token. Each is invisible in a diff and none has a failing test. Policy review happens once, at design time; configuration drift happens continuously.
